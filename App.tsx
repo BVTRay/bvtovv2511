@@ -13,9 +13,9 @@ const App: React.FC = () => {
       <div className="fixed inset-0 z-0 pointer-events-none">
          <div className="absolute inset-0 bg-[#050505]"></div>
          {/* Animated Blobs */}
-         <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-red-900/20 rounded-full mix-blend-screen filter blur-[120px] animate-blob"></div>
-         <div className="absolute top-[20%] right-[-10%] w-[40vw] h-[40vw] bg-blue-900/10 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-2000"></div>
-         <div className="absolute bottom-[-10%] left-[20%] w-[45vw] h-[45vw] bg-purple-900/10 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-4000"></div>
+         <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-red-900/10 rounded-full mix-blend-screen filter blur-[120px] animate-blob"></div>
+         <div className="absolute top-[20%] right-[-10%] w-[40vw] h-[40vw] bg-blue-900/5 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-2000"></div>
+         <div className="absolute bottom-[-10%] left-[20%] w-[45vw] h-[45vw] bg-purple-900/5 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-4000"></div>
          
          {/* Noise Texture Overlay */}
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
@@ -170,7 +170,7 @@ const App: React.FC = () => {
             {BUSINESS_AREAS.map((item, idx) => (
               <div key={idx} className="glass-card p-10 rounded-2xl relative overflow-hidden group hover:border-red-900/30 transition-colors">
                 <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity duration-500 transform group-hover:scale-110">
-                  {React.cloneElement(item.icon as React.ReactElement, { size: 80, strokeWidth: 1 })}
+                  {React.cloneElement(item.icon as React.ReactElement<any>, { size: 80, strokeWidth: 1 })}
                 </div>
                 <div className="flex items-center gap-4 mb-6">
                    <div className="p-3 bg-white/5 rounded-lg text-red-500">

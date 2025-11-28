@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SectionId } from '../types';
 import { Menu, X } from 'lucide-react';
+import { LogoIcon } from './Logo';
 
 interface NavbarProps {
   logoUrl?: string;
@@ -50,11 +51,10 @@ export const Navbar: React.FC<NavbarProps> = ({ logoUrl }) => {
           className="cursor-pointer flex items-center gap-3 group" 
           onClick={() => scrollToSection(SectionId.HOME)}
         >
-          <div className="relative w-10 h-10 flex items-center justify-center transition-transform duration-500 group-hover:rotate-180">
-             <div className="w-0 h-0 border-l-[20px] border-r-[20px] border-b-[35px] border-l-transparent border-r-transparent border-b-red-900 absolute top-0 left-0 opacity-80"></div>
-             <div className="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[25px] border-l-transparent border-r-transparent border-b-red-600 absolute top-[8px] left-[5px]"></div>
+          <div className="text-brand-red group-hover:text-red-500 transition-colors duration-500 filter drop-shadow-[0_0_8px_rgba(139,0,0,0.5)]">
+             <LogoIcon className="w-10 h-10" />
           </div>
-          <h1 className="text-xl md:text-2xl font-serif font-bold tracking-widest text-white group-hover:text-red-500 transition-colors">
+          <h1 className="text-xl md:text-2xl font-serif font-black tracking-widest text-white group-hover:text-red-500 transition-colors">
             不恭文化
           </h1>
         </div>
