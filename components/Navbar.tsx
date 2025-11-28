@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SectionId } from '../types';
 import { Menu, X } from 'lucide-react';
-import { LogoIcon } from './Logo';
+import { LogoIcon, LogoTextVector } from './Logo';
 
 interface NavbarProps {
   logoUrl?: string;
@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({ logoUrl }) => {
     <nav 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b ${
         isScrolled 
-          ? 'bg-black/50 backdrop-blur-xl border-white/10 py-4 shadow-lg' 
+          ? 'bg-black/50 backdrop-blur-xl border-white/10 py-3 shadow-lg' 
           : 'bg-transparent border-transparent py-6'
       }`}
     >
@@ -51,12 +51,14 @@ export const Navbar: React.FC<NavbarProps> = ({ logoUrl }) => {
           className="cursor-pointer flex items-center gap-3 group" 
           onClick={() => scrollToSection(SectionId.HOME)}
         >
-          <div className="text-brand-red group-hover:text-red-500 transition-colors duration-500 filter drop-shadow-[0_0_8px_rgba(139,0,0,0.5)]">
+          {/* Icon */}
+          <div className="text-brand-red group-hover:text-red-500 transition-colors duration-500 filter drop-shadow-[0_0_8px_rgba(172,4,28,0.5)]">
              <LogoIcon className="w-10 h-10" />
           </div>
-          <h1 className="text-xl md:text-2xl font-serif font-black tracking-widest text-white group-hover:text-red-500 transition-colors">
-            不恭文化
-          </h1>
+          {/* Text Vector */}
+          <div className="text-white group-hover:text-red-500 transition-colors duration-500 mt-1">
+             <LogoTextVector className="h-6 w-24" />
+          </div>
         </div>
 
         {/* Desktop Menu */}
@@ -65,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({ logoUrl }) => {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-xs uppercase tracking-[0.15em] text-gray-400 hover:text-white hover:scale-105 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
+              className="text-xs uppercase tracking-[0.15em] text-gray-400 hover:text-white hover:scale-105 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full"
             >
               {item.label}
             </button>
@@ -86,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({ logoUrl }) => {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-2xl font-serif text-gray-200 hover:text-red-500 transition-colors"
+              className="text-2xl font-serif text-gray-200 hover:text-brand-red transition-colors"
             >
               {item.label}
             </button>
