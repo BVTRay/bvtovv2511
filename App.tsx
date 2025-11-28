@@ -263,9 +263,13 @@ const App: React.FC = () => {
           </div>
         </Section>
 
-        <footer className="py-12 bg-black border-t border-white/5 text-center text-gray-600 text-xs font-light tracking-wider relative z-10">
-          <p className="mb-2 uppercase">&copy; {new Date().getFullYear()} Bugong Culture. All rights reserved.</p>
-          <p>京ICP备XXXXXXXX号</p>
+        <footer className="py-12 bg-black border-t border-white/5 text-center text-gray-600 text-xs font-light tracking-wider relative z-10 flex flex-col gap-2">
+          <p>Copyright © 2017-2025 不恭文化 All rights reserved.</p>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+             <span>京ICP备2021008895号-1</span>
+             <span className="hidden md:inline">|</span>
+             <span>京公网安备11010502044367号</span>
+          </div>
         </footer>
       </div>
     </div>
